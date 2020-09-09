@@ -1,0 +1,37 @@
+name:                  hsSimpleStats
+version:               1.0.0.0
+-- synopsis:
+description:           simple statistics
+-- bug-reports:
+license:               GPL-3
+license-file:          LICENSE
+author:                Alexander Diemand
+maintainer:            codieplusplus@apax.net
+copyright:             2020 Alexander Diemand
+category:              Statistics
+cabal-version:         >=1.10
+build-type:            Simple
+extra-source-files:    README.md
+
+library
+  default-language:    Haskell2010
+  hs-source-dirs:      src
+  exposed-modules:     SimpleStats.Boxplot
+                     , SimpleStats.CDF
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >=4.13 && <4.14
+
+test-suite tests
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
+  hs-source-dirs:      test
+  main-is:             Tests.hs
+  other-modules:       SimpleStats.Tests.Basic
+  build-depends:       base,
+                       hsSimpleStats,
+                       tasty,
+                       tasty-hunit,
+                       tasty-quickcheck
+
